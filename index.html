@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entscheidungsbaum</title>
+    <link rel="stylesheet" href="./css/tree.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+
+<body>
+    <script src="./js/decision_tree.js" defer></script>
+    <div id="inputContainer">
+        <span>
+            <label for="data">Wähle deine *.csv-Datei aus:</label>
+            <input type="file"
+            id="data" name="data"
+            accept=".csv">
+        </span>
+        <span>
+            <label for="depth">Was ist die größte Baumtiefe?</label>
+            <input type="number" step="1"
+            min="0" max="10" value="5"
+            id="depth" name="depth">
+        </span>
+        <span>
+            <label for="depth">Wieviele Prozent der Daten sollen als Trainingsdaten verwendet werden?</label>
+            <input type="number" step="1"
+            min="0" max="100" value="50"
+            id="ratio" name="ratio">
+        </span>
+               
+        <button id="drawTree">Entscheidungsbaum erstellen</button>
+    </div>
+
+    <div id="treeContainer"></div>
+    <div id="tableContainer">
+        <table id="classification"></table>
+    </div>
+</body>
+
+</html>
