@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #inputContainer {
@@ -24,11 +25,11 @@ p {
 }
 
 .node {
-    background-color: aqua;
+    background-color: #f7a200;
 }
 
 .leaf {
-    background-color: chartreuse;
+    background-color: #008bd1;
 }
 
 table {
@@ -43,9 +44,13 @@ table {
   }
   
   tr.correct {
-    background-color: green;
+    background-color: #90EE90;
   }
 
   tr.incorrect {
-        background-color: red;
+        background-color: #FF7F7F;
   }
+
+  button {
+    max-width: fit-content; 
+}

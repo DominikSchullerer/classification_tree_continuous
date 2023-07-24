@@ -1,5 +1,6 @@
 let maxDepth = 5
 let ratio = 0
+let testData
 
 
 /* Leaf of the decision tree */
@@ -318,7 +319,14 @@ function divideData(samples, proportion) {
 }
 
 let classification = document.getElementById("classification")
+let tableHeader = document.getElementById("tableHeader")
 function buildTestDataTable(samples) {
+
+    tableHeader.textContent = "Vorhersage für die Testdaten"
+
+    tableContainer.insertBefore(tableHeader, classification)
+
+
     classification.innerHTML = ''
 
     let Header = document.createElement('tr')
@@ -427,12 +435,23 @@ drawButton.addEventListener('click', function() {
         
         let dividedData = divideData(samples, ratio)
         let trainingData = dividedData[0]
-        let testData = dividedData[1]
+        testData = dividedData[1]
         
 
         tree = decisionTree(trainingData, attributes)
         treeToHtml(tree)
 
+        tableHeader.textContent = ""
+        classification.textContent = ""
+
+        // buildTestDataTable(testData)
+    }
+})
+
+let drawTableButton = document.getElementById('comparePrediction')
+drawTableButton.addEventListener('click', function() {
+    /* There is data */
+    if (tree != undefined) {
         buildTestDataTable(testData)
     }
 })
